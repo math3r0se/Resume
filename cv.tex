@@ -1,9 +1,17 @@
 \documentclass[a4paper,11pt]{moderncv}
 
-\moderncvtheme[green]{casual}
+\moderncvtheme[blue]{classic}
 
 \usepackage[utf8]{inputenc}
-\usepackage[scale=0.8]{geometry}
+\usepackage[top=1.1cm, bottom=1.1cm, left=2cm, right=2cm]{geometry}
+
+\usepackage{fontspec}
+\setmainfont{Arial}
+
+\usepackage{ragged2e}
+\justifying
+
+\setlength{\hintscolumnwidth}{2.5cm}
 
 \name{Joel}{Tordjman}
 \address{Paris}{France}
@@ -20,9 +28,9 @@
 \colorlet{nolanguagecolor}{white}
 \newcount\languagecount
 \newcommand\languageknowledge[2]
-  {%
+  {
     \hbox
-      {%
+      {
         \makebox[5cm][l]{#1}%
         \languagecount=0
         \loop\ifnum\languagecount<#2
@@ -33,14 +41,15 @@
           \advance\languagecount1
           \textcolor{nolanguagecolor}{$\bullet$}%
         \repeat
-      }%
+      }
   }
 
 \begin{document}
 
 \maketitle
 
-\section{Experience}
+\vspace*{-1.5\baselineskip}
+  \section{Experience}
     \cventry % Outscale
         {December 2020 - Present}
         {Work-Study in SysAdmin}
@@ -69,13 +78,6 @@
         {Paris, France}
         {HND in Network administration}
         {IT support, maintenance and troubleshooting of servers and network}
-%    \cventry % Elite Telecoms
-%        {3 times between 2015 and 2017}
-%        {Internship in IT administration}
-%        {Elite Telecoms}
-%        {Paris, France}
-%        {A level in Network administration}
-%        {IT support, maintenance and troubleshooting of servers and network}
 
 \section{Formation}
     \cventry % Sup de Vinci MASTER
@@ -83,14 +85,14 @@
         {Master in IT}
         {DevOps specialised}
         {Courbevoie, France}
-        {Sandwich course}
+        {Work-Study}
         {Outscale}
     \cventry % Sup de Vinci BACHELOR
         {October 2019 - September 2020}
         {Bachelor in IT}
         {Systems administrations specialised}
         {Courbevoie, France}
-        {Sandwich course}
+        {Work-Study}
         {Vidal France}
     \cventry % BTS SIO
         {September 2017 - July 2019}
@@ -99,20 +101,12 @@
         {SISR}
         {Specialised in Network and System Administration}
         {Paris, France}
-%    \cventry % BAC PRO SEN TR
-%        {September 2014 - July 2017}
-%        {A level in IT}
-%        {BAC PRO SEN}
-%        {TR}
-%        {Specialised in Network and System Administration}
-%        {Paris, France}
 
 \section{Languages}
     \languageknowledge{French}{5}
     \languageknowledge{English}{3}
-% Skills
+
 \section{Skills}
-    % add skills here
     \languageknowledge{Linux administration}{4}
     \languageknowledge{Windows administration}{3}
     \languageknowledge{Network administration}{4}
@@ -124,6 +118,5 @@
     \languageknowledge{Autonomy}{3}
     \languageknowledge{Versatile}{3}
     \languageknowledge{Teamwork}{3}
-
 
 \end{document}
