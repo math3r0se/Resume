@@ -1,0 +1,30 @@
+name: Build Latex
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Update system
+        run: |
+          sudo apt update;
+      - name: Install dependencies
+        run: |
+          sudo apt install -yf texlive-xetex;
+          sudo apt install -yf texlive-fonts-extra;
+          sudo apt install -yf texlive-lang-french;
+      - name: Build
+        run: |
+          cd $GITHUB_WORKSPACE;
+          xelatex cv.tex;
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with: 
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          files: |
+            cv.pdf
