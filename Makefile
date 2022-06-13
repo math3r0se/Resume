@@ -1,4 +1,8 @@
 FILE = "cv.tex"
+DATE = date +%Y%m%d%H%M
+MAJOR = "0"
+MINOR = "1"
+PATCH = $(date +%Y%m%d%H%M)
 
 all: build commit
 
@@ -6,8 +10,4 @@ build:
 	lualatex $(FILE)
 
 commit: build
-	git add .
-	git commit -m "Update CV on $(date +%d-%m-%Y-%H-%M)"
-	git push
-	git tag -a "cv-$(date +%d-%m-%Y-%H-%M)" -m "cv-$(date +%d-%m-%Y-%H-%M)"
-	git push --tags
+	
