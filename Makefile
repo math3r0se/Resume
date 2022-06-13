@@ -13,5 +13,5 @@ commit: build
 	@git add .
 	@git commit -m "Update $(FILE) $(DATE)"
 	@git push
-	@git tag -a $(MAJOR).$(MINOR).$(PATCH) -m "Update $(FILE) $(DATE)"
+	@git tag -a v$(MAJOR).$(MINOR).$(PATCH) -m "Update $(FILE) $(DATE)"
 	@git push --tags
