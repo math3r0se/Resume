@@ -21,7 +21,7 @@ jobs:
       - name: Build
         run: |
           cd $GITHUB_WORKSPACE;
-          xelatex cv.tex;
+          lualatex cv.tex;
       - uses: "marvinpinto/action-automatic-releases@latest"
         with: 
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
