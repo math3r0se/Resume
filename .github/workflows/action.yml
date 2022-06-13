@@ -2,8 +2,8 @@ name: Build Latex
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'
 
 jobs:
   build:
@@ -15,7 +15,7 @@ jobs:
           sudo apt update;
       - name: Install dependencies
         run: |
-          sudo apt install -yf texlive-xetex;
+          sudo apt install -yf texlive-luatex;
           sudo apt install -yf texlive-fonts-extra;
           sudo apt install -yf texlive-lang-french;
       - name: Build
