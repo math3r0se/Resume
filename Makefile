@@ -8,7 +8,7 @@ BUILD = "2"
 all: build commit
 
 build:
-	@xelatex $(FILE)
+	@lualatex $(FILE)
 
 commit:
 	@git add .
