@@ -15,9 +15,11 @@ jobs:
           sudo apt update;
       - name: Install dependencies
         run: |
-          sudo apt install -yf texlive-luatex;
-          sudo apt install -yf texlive-fonts-extra;
-          sudo apt install -yf texlive-lang-french;
+          sudo apt install -yf \
+            texlive-luatex \
+            texlive-lang-french;
+          sudo apt install ttf-mscorefonts-installer -yf;
+          sudo fc-cache -f
       - name: Build
         run: |
           cd $GITHUB_WORKSPACE;
