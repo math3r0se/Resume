@@ -3,12 +3,13 @@ MAJOR = "0"
 MINOR = "1"
 PATCH = `date +%Y%m%d%H%M`
 
+.PHONY: all
 all: build commit
 
 build:
-	@lualatex $(FILE)
+	@xelatex $(FILE)
 
-commit: build
+commit:
 	@git add .
 	@git commit -m "Update $(FILE) $(PATCH)"
 	@git push
