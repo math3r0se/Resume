@@ -2,13 +2,13 @@ FILE = "cv.tex"
 MAJOR = "0"
 MINOR = "1"
 PATCH = "0"
-BUILD = "4"
+BUILD = "5"
 
 .PHONY: all
 all: build commit
 
 build:
-	@lualatex $(FILE)
+	@xelatex $(FILE)
 
 commit:
 	@git add .
