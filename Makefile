@@ -1,13 +1,7 @@
 FILE = "cv.tex"
 MAJOR = "0"
 MINOR = "1"
-
-# if os is windows
-ifeq ($(OS),Windows_NT)
-	PATCH = $(shell Get-Date -Format "MMddyyyyHHmmK")
-else
-	PATCH = $(shell date +%m%d%Y%H%M%Z)
-endif
+PATCH = ""
 
 .PHONY: all
 all: build commit
