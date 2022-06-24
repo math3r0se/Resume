@@ -1,7 +1,8 @@
 FILE = "cv.tex"
 MAJOR = "0"
 MINOR = "1"
-PATCH = "1"
+PATCH = "0"
+BUILD = "1"
 
 .PHONY: all
 all: build commit
@@ -11,7 +12,7 @@ build:
 
 commit:
 	@git add .
-	@git commit -m "Update $(FILE) $(PATCH)"
+	@git commit -m "Update $(FILE) $(MAJOR).$(MINOR).$(PATCH)-rc$(BUILD)"	
 	@git push
-	@git tag -a v$(MAJOR).$(MINOR).$(PATCH) -m "Update $(FILE) $(PATCH)"
+	@git tag -a v$(MAJOR).$(MINOR).$(PATCH)-rc$(BUILD) -m "Update $(FILE) $(PATCH)"
 	@git push --tags

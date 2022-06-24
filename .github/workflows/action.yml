@@ -15,9 +15,7 @@ jobs:
           sudo apt update;
       - name: Install dependencies
         run: |
-          sudo apt install -yf \
-            texlive-luatex \
-            texlive-lang-french;
+          sudo apt install -yf texlive-luatex texlive-lang-french;
           sudo apt install ttf-mscorefonts-installer -yf;
           sudo fc-cache -f
       - name: Build
