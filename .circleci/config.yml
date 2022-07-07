@@ -19,7 +19,7 @@ jobs:
           command: "sudo apt update"
       - run:
           name: "Install TexLive"
-          command: "sudo apt install -yf texlive-full ttf-mscorefonts-installer"
+          command: "sudo apt install -yf texlive-base texlive-fonts-extra texlive-lang-french texlive-fonts-extra-links texlive-fonts-recommended texlive-luatex ttf-mscorefonts-installer"
       - run:
           name: "Compile"
           command: |
