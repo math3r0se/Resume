@@ -24,7 +24,7 @@ jobs:
           command: "sudo apt update"
       - run:
           name: "Install TexLive"
-          command: "sudo apt install -yf fonts-open-sans texlive-extra-fonts texlive-latex-recommended texlive-xetex texlive-lang-french"
+          command: "sudo apt install -yf fonts-open-sans texlive-fonts-extra texlive-latex-recommended texlive-xetex texlive-lang-french"
       - run:
           name: "Compile"
           command: |
