@@ -24,7 +24,7 @@ jobs:
           command: "sudo apt update"
       - run:
           name: "Install TexLive"
-          command: "sudo apt install -yf luatex texlive-latex-recommended texlive-luatex texlive-lang-french ttf-mscorefonts-installer"
+          command: "sudo apt install -yf luatex texlive-binaries texlive-latex-recommended texlive-luatex texlive-lang-french ttf-mscorefonts-installer"
       - run:
           name: "Compile"
           command: |
