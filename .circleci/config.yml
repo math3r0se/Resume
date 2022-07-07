@@ -24,11 +24,11 @@ jobs:
           command: "sudo apt update"
       - run:
           name: "Install TexLive"
-          command: "sudo apt install -yf luatex texlive-binaries texlive-latex-recommended texlive-luatex texlive-lang-french ttf-mscorefonts-installer"
+          command: "sudo apt install -yf texlive-binaries texlive-latex-recommended texlive-xetex texlive-lang-french ttf-mscorefonts-installer"
       - run:
           name: "Compile"
           command: |
-            lualatex cv.tex;
+            xelatex cv.tex;
             mkdir /tmp/artifacts;
             cp cv.pdf /tmp/artifacts/
       - store_artifacts:
