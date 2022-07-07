@@ -25,6 +25,7 @@ jobs:
       - run:
           name: "Install TexLive"
           command: "sudo apt install -yf texlive-latex-recommended texlive-xetex texlive-lang-french ttf-mscorefonts-installer"
+      - run: "sudo fc-cache -f"
       - run:
           name: "Compile"
           command: |
