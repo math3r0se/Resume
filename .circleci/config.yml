@@ -9,14 +9,29 @@ jobs:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
-      - image: cimg/base:2022.06
+      - image: cimg/ubuntu-2204:2022.04.1
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: "Update"
+          command: "sudo apt update"
+      - run:
+          name: "Install TexLive"
+          command: "sudo apt install -yf texlive-luatex ttf-mscorefonts-installer"
+      - run:
+          name: "Compile"
+          command: |
+            lualatex cv.tex;
+            mkdir /tmp/artifacts;
+            cp cv.pdf /tmp/artifacts/
+      - store_artifacts:
+                path: /tmp/artifacts
+      - run:
+          name: "Publish on Github"
+          command: |
+            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} /tmp/artifacts/
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
