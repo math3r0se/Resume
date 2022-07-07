@@ -15,9 +15,7 @@ jobs:
           sudo apt update;
       - name: Install dependencies
         run: |
-          sudo apt install -yf texlive-full;
-          sudo apt install ttf-mscorefonts-installer -yf;
-          sudo fc-cache -f
+          sudo apt install fonts-open-sans texlive-fonts-extra texlive-latex-recommended texlive-xetex texlive-lang-french -yf;
       - name: Build
         run: |
           cd $GITHUB_WORKSPACE;
