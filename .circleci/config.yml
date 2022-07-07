@@ -24,7 +24,7 @@ jobs:
           command: "sudo apt update"
       - run:
           name: "Install TexLive"
-          command: "sudo apt install -yf texlive-binaries texlive-latex-recommended texlive-xetex texlive-lang-french texlive-fonts-extra"
+          command: "sudo apt install -yf texlive-latex-recommended texlive-xetex texlive-lang-french ttf-mscorefonts-installer"
       - run:
           name: "Compile"
           command: |
