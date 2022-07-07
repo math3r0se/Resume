@@ -16,4 +16,3 @@ commit:
 	@git push
 	@git tag -a v$(MAJOR).$(MINOR).$(PATCH)-rc$(BUILD) -m "Update $(FILE) $(PATCH)"
 	@git push --tags
-	
