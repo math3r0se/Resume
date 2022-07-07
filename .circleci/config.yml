@@ -2,6 +2,11 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
+general:
+  branches:
+    only:
+      - 'v*'
+
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
@@ -19,7 +24,7 @@ jobs:
           command: "sudo apt update"
       - run:
           name: "Install TexLive"
-          command: "sudo apt install -yf texlive-base texlive-fonts-extra texlive-lang-french texlive-fonts-extra-links texlive-fonts-recommended texlive-luatex ttf-mscorefonts-installer"
+          command: "sudo apt install -yf texlive-luatex texlive-lang-french ttf-mscorefonts-installer"
       - run:
           name: "Compile"
           command: |
