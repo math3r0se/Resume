@@ -2,7 +2,7 @@ FILE = "cv.tex"
 MAJOR = "0"
 MINOR = "1"
 PATCH = "0"
-BUILD = "7"
+BUILD = "8"
 
 .PHONY: all
 all: build commit
